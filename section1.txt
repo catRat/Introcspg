@@ -1,0 +1,289 @@
+lecture 1 - Introduction to Computation
+in this first lecture, we're going to talk about some of the fundamental principles of computation and computational thinking.
+for example, what does a computer actually do?
+what are its fundamental operations?
+how do thoes fundamental operations support what we call imperative knowledge or how-to methods?
+what are the basic elements of a computer that enable it to compute things, described by algorithms, or how-to recipes?
+and dinally, how can we use a language, a programming language in ...
+
+the introduction to computer science and programming.
+It's odd to have both of those terms in the title, but both of them are important 
+this coures is going to be not just about teaching you how to program a computer, how to tell the computer instructions, that it understand. It's also going to be really important to create within you a capability to think computationally.
+so our goal is to let you become skillfull at not only getting the computer to do something, but to do that thing that you want it to, to get it to solve a problem.
+by the end of this course, we hope that your first instinct when faced with any interesting challenge is to first think bout how could i capture that challenge, that problem in an algorithmic or mechanical description of steps such that i could get the computer to do
+if you can do that, it's going to give you a great deal of advantage as you face any kind of problem.
+and those are the skills that you're going to see throughout this course.
+now if our goal is to have you learn how to get a computer to something for you, how to talk to the computer, how to think algorithmically.
+so what a computer going to do for us? what's it actually good at?
+that seems like probably an odd question. After all, we know computers could do a ton things.
+But it's still important to go back to a very fundamental and basic point.
+what does a computer do?
+in fact it does 2 things and 2 things only.
+it performs some calculations, and it remenbers results so that it can reuse them.
+what kinds of calculations.
+well, it turns out that every computer comes with a simple set of primitive calculations, things that we call built in.
+they're provided by the manufacturer as the basic elements that a computer could use.
+we'll see some examples of that shortly.
+if that's all we have, that's pretty limiting.
+so a key thing, as we go through the material in this course, is to learn how we can create our own methods for computing something, how we can capture the computational way of thinking about something in a manner that could be used by the computer, and to do it in a way whereby the computer can abstract that.
+by that we mean that the computer can figure out how to take what you tell it and turn it into something that it can now rewat as if it were a primitive, something that was provided by the manufacturer, and reuse that throughout its computation.
+so our computers are going to do calculations for us, using a set of bulit-in primitives, plus things that we add.
+now you might ask, gee, is that enough?
+if it turns out that a computer can just perform primitives calculations, it's not sufficient.
+well, as I'm sure you already realize, modern computers can perform most calculations incredibly quickly.
+and so one question is if we can do them fast enough is that sufficient to do interesting things?
+let's look at both parts of that.
+first of all, how quickly does a modern computer actually run?
+well, let me give you a simple little thought example.
+if I were to take a little goosenesk lanp and put it right here, a foot above my desk, and I were to time things perfectly so that as I hit the switch on the lamp I hit a key on my computer and started them both up at exactly the same time, in the length of time it take the light to go from the lamp to the desk your computer will execute two operations.
+that is amazing, It does two aperations, two of those primitive operations in the amount of time it takes light to go basically a foot. Unbelievable.
+
+now, that suggests that in fact these computers are and even though they're computing very simple things, they'er doing incredibly quickly.
+we say computers do simple operations.
+we also said that they hae some storage.
+so how big is the storage inside of a computer?
+well, every element of storage is called a byte.
+and if we were to assume that a byte weighed 1 ounce, a typical computer has hundreds of gigabytes of storage.
+and that says if each one of those bytes weighs 1 ounce a computer would be able to store the equivalent of 300mtons
+incredible amount of storage, can remenber a lot of ghings, and incredibly quick in terms of doing the computation.
+so, that sounds really good.
+the question is if they're only primitive operations is not enough?
+well, they're going to do a lot as we see. 
+but we're also going to see that they're not quite enough to do everythings we like.
+let me give you 2 examples.
+I'm sure all of you have gone to the world wide web to look.
+you've searched the web to try and find things that you'd like to know about.
+the question is if a computer is just doing this the strightforward way how quickly would it seach the web.
+well, it turns out there are about 45,000,000,000 searchable pages on the web at the moment.
+and the problem is that, yes, computers are really fast, but we need good algorithmic design as well.
+to deal with interesting problems, we need algorithms that are vlever, are intelligent, are smart about how they actually do the work.
+and that's a lot of what we're going to talk about this during this term.
+by the way, we also said space was a big issue.
+despite its speed and storage, cleverness of the algorith, out computer still has limitations.
+here are a couple of examples.
+some problems are just too complex. we don't have enough speed, enough storage. and they may get tackle as things improve. 
+but examples here would be things like predicting weather at a local scale. i'd love to know what's exactly going to happen outside my window for the next half hour or next hour or next 3 hours.
+the size of the problem simply too bog for a computer to be able to model well enough and solve in a reasonable amount of time.
+it turns out some of these complex problems actually help us, modern cryptography, the way in which inpormation is securely transmitted across the net, relies on having some problems that are simply too difficult to compute and, therefore, too difficult to break the code.
+so we actually get some benefits about the problems that are too complex.
+but some problems that are just fundamentally impossible to compute no matter how big the computer is. 
+and some of those are really heavy.
+here is one example, being able to predict whether a piece of code will alsays stop with an answer for any input. and this is known as Turing's Halting Problem.
+nonetheless, in this course, we're going to start talking about how do we think algorithmically and get the computer do intere things.
+
+we want to understand, what does it mean to think computtionally?
+that ieads to the philosophical question, so what is computations?
+and like a good philosophical questio, that leas to another, deeper philosophical question. 
+to answer that question of what's computation, let's start by asking he question, hat is knowledge?
+and as we see, we can find knowledge up into 2 parts.
+there's declarative knowledge,which we can think of the sttements of fact.
+imperative knowledge, or how to's methods.
+statements of fats give us true, but, as we'll see, they don't necessarily help us think about how to find new information.
+imperative knowledge, how to methods or recipes, give us ways of finding new information, and that's going to be really valuable to us.
+now, to look at his, let's look at an example.
+so, what do we mean by declarative knowledge?
+well, here's a piece of declarative knowledge.
+that first statement says, the square root of a number x is a number y such that y * y = x.
+you know that's true from high school algebra.
+it's a statement of truth. 
+it tells us something about how to decide whether a particular number is a square root or not, but can we use this to actually find a square root?
+and the answer is no.
+if we have a number x equal to 25 and we're trying to find the square root of that, and somebody gives us a guess y = 5
+as we said, imperative knowledge is how to kinds of knowledge, or methods or recipes for finding something, and here's a recipe for deducing square root.
+It's actually attributed to Heron of Alexandria, although there's some debate as to whether he was the original creator of this algorithm, but it dates from the first centry ad.
+and you can see the description here. 
+description says if i want to find the square root of some number x, I'm going to start with a guess. 
+I'll call it g.
+I'm going to take g and multiply it by itself and look if that result is close enought to x.
+if it is , I'm going to stop, and say that g is the answer.
+Otherwise, I'm going to make a new gues by averaging g and x/g, and using this new guess, which i will call g again, I'm going to repeat the process untill we get something 
+goal: become skillful at making a computer do what you want it to do
+      learn computational modes of thinking
+
+fundamentally a computer: performs calculations
+			  remembers the results
+
+what calculations?
+built in primitives
+creating our own methods of calculating
+
+so computer are going to do calculations for us, using a set of built-in primitives, plus things tht we add.
+
+how quickly a modle computer actually run?
+two operation
+
+how big is the storage inside of a computer?
+
+are simple calculations enough?
+searching the world wide web
+playing chess
+good algorithm design also needed to accomplish a task!
+despite its speed and storage, a computer does have limitations
+soe problems still too complex
+some problems are fundamentally impossible to computer
+predictiong whether a piece of code will always halt with an answer for any input
+we want to think about computational problem solving
+what is computation?
+-what is knowledge?
+2 part
+declarative knowledge
+statements of fact
+imperative knowlege
+"how to" methods or recipes
+declarative knowledge
+here is a "recipe" for deducing a square root of a number x - attributed to heron of alexandria in the first century ad
+start with a guess, called g
+if g*g is close enough to x, stop and say that g is the answer
+
+mechanical process, how-to methods for capturing ways of getting the computer to do something for us.
+Now we can ask the question how do we actually get that recipe into a mechanical process inside of the computer.
+What kind of things will we need to have the computer do that work for us, do that little Heron of Alexandria algorith for computing square roots.
+We actually got a couple of choices here.
+First one is we could build a machine specifically to compute square roots.
+But in fact early computers were exactly this.
+They were instances of what were called fixed program computers.
+And a fixed program compuer was somehing that did a specific calculation and was designed to do exactly that.
+In fact you've seen a fixed program computer.
+A calculator is exactly that.
+It does a set of arithmetic computation.
+That's all it does.
+It could be more complicated.
+In fact some of the early computers were.
+Atanasoff and Berry in 1941 built a computer for solving systems of linear equations.
+And even despite the fact that the technology wasn't quite as sophisticated as it is today, it did quite well at doing that.
+During the war, Alan Turing, one of the most famous computer scientists, built what was called the bombe, which was used to decode Enigma codes during World War II, again, a computer built specifically for that purpose but solving a very complex task.
+The problem with a fixed program computer is that it does only that thing it was designed to do. 
+What we'd really like is a computer they can do anything we tell it to do.
+And for that, we want a machine that can both store and manipulate sequences of instructions.
+And those are called stored program computers.
+And that's what almost every modern computer is.
+It's stored program computer.
+Well, the idea behind a stored program computer is that we can take a sequence of instructions -- we're going to talk in a second about how we create them -- but a sequence of instructions, think of it as a program, that is going to capture the steps of our algorithm in order.
+And we're going to be able to input that sequence of instructions insede the computer.
+That sequence of instructions will be built from a predefined set of pirimitives.
+Ah, that goes back to what we talked about earlier.
+In most cases, those primitives will be very simple things, simple arithmetic, simple logic, simple tests on both numbers and characters, and the ability to move data around inside of the macchine. Very primitive operations.
+We're going to see how to use those in a clever way, but that sequence of instructions is what we're going to read into the computer and store there.
+Once we've done that , then inside the computer there will be a special program called an interpreter.
+And that program basically walks throught those sequences of instructions in order, executing each one in turn.
+It's going to use the tests to change the flow of control through the sequence and to decide when to stop once we're done.
+But it's going to simply execute a very simple set of ...
+So the idea is we can read or load the instruction computer.
+We might be able to change them around.
+And then we can ask the computer to start at the beginning and walk through the sequence executing some computation.
+Let's look at that in a bit more detail.
+So here's a simple architecture for a computer.
+It's got a memory.
+It's got what's called an ALU or an arithmetic logic unit which is going to do those primitive operations for us.
+And it's got a control unit that keeps track of where things are and asks the ALU to do work.
+So when we read in some code, a program, it's basically going to create a set of instructions up there in the memory.
+And inside the control unit, there's a special thing called a program counter that initially points to the first instruction in that sequence.
+When we ask the program to run, when we ask the interpreter to eecute the program, it starts by going to that instruction and executing it.
+And that instructin weill typically be something that takes some value out of memory, runs it into the ALU, does some computation, and stores it back in memory.
+Having done that , the program counter increases by 1, which means it goea to the next instruction.
+And it executes that instructiong which, again, typically will be to take some values in memory, run them throught ALU, do a simple computatin, and store them back here.
+And it simply keeps doing that, moving through the sequence of instructions 1 at a tiem, doing those very simple arithmetic and logic kinds of computations.
+Every once in a while, it'll get to an instruction that is the test.
+It's going to compare a number, to see if it's grater than 0, for example, or compare a character.
+But it's going to do a simple test.
+If that test urns out to be true, that test is going to actually chnge the program counter, causing the system to jump back to or jump forward to some other place in the code, changing where we are in the code.
+And it's going to keep doing that.
+And it will do that until, infact, it reaches a point where it syas, I'm done, at which point it will output the result here.
+Those are the basic elements of a computerr, a control unit here that has us follow through a sequence of  instructions up here, causing data to flow through the ALU and back into memory, and occasionally using tests to jump around in the code.
+And we're going to see very shorthly how to start building up programs to de exactly that.
+ok, that sound need.
+So what are the primitives?
+Essentially says if we can have a stored program computer we need to set a primitives.
+We're going to need some way of controlling them, which we'll get to, but what are the primitives?
+Well, it turs out that same guy, Alan Turing, showed that using just 6 primitives it's possible to computer anything that's computable.
+That's amazing.
+And in fact we refer to that property as saying that any computer, any interpreter that has that proerty is what we call Turing complete, which by the way says anything you computer in 1 programming lanuage you can computer in any other programming language.
+Now having oly 6 primitive sounds cool, but it also sounds like, man , if I've got to program everything by reducing it down to some really large sequence of primitive operations, this is going to be a serious pain in some parts of the anatomy.
+And it is .
+So, fortunately, modern programming languages have a more convenient set of primitives.
+And in the next lecture sequence, we're going to start talking about what those are in Python, the language we're going to use.
+Not only do we have a more convenient set of primitives, but a key thing a programming language will have is some way of being able to abstract methods, that is take a description, that sequence of code that we've written, and use it to create a new primitve, thereby adding to the set of primitives that the system can use.
+But nonetheless, as we've seen, just starting from 6 primitives, we can build up an entire array of computation.
+And anythign computable in one language is going to be computable in any other programming language.
+goals to capture how-to knowledge by breaking problems down into mechanical steps and then to figure out how to turn that into something the machine understands, the computer understands, so that it can execute those steps for us, we're ready to start putting those pieces together.
+In the next lecture, we're going to begin doing that on Python, but before we do we want to talk about 1 last piece, about what it eans to create recipes.
+Every programming language provides, as we've saide, a set of primitive operations.
+They're defined ahead of time, they're the components of the ALU that make the computer do its work.
+So we're going to build on top of those.
+Similarly, every programmign language provides a means or mechanism for combining primitives to form more complex, but legal, expressions.
+How do we put together sequences of operations?
+How do we define the kinds of things that we want to do?
+And finally, every programming language proides a mechanism or means for assigning a meaning or value to each computation or expression.
+That's going to let us map between what the computer actually does and what we want it to do.
+Knowing that a particular expression leads to a particular kind of value is going to allow us to deduce the sequence of operaions that we want to use.
+So when we talk about programming languges, we need to talk a little bit about the primitives, about how we put them together to make legal expressions, or more complex things, and then how the computer's actually going to deduce the value or meaning associated with an expression.
+That means that when we talk about languages then, we'll start by first describing what are the primitive constructs.
+What are the elements out of which we put things together?
+In programming languages, we're going to see that those basic elements are things like numbers, strings, or sequences of characters, and simple operators.
+And in a real language, or a natural language, the equivalent is , for example, words, in English.
+What are the words of the programming language?
+What are the basic units that we put together?
+When we go to put them together, we will talk about the syntax of the lnguage.
+And that wells us which strings of characters and symbols consitute well-formed combinations in the language.
+In programming language, well, as we'll see when we get to specifics, it'll be things like a number, followed by an operator, followed by a number, is a valid Python.
+And it says, basically, apply that operator to those 2 numbers to do the righ arithmetic thing.
+That's a well-formed expression in Pyhont.
+We have the same thing in English.
+There are words that can be put together in some ways but . So for example, in English, the sequence "cat dog by" is not syntactically valid beacause it's not in the form of an aceptable sentence.
+So in programming languages, we'll worry about defining the syntax.
+How do you put things together?
+In addition to syntax, we also have the ...
+And semantics refers to the meanings associated with the expression.
+between 2 kinds of semantics.
+First, there's static semantics.
+That basically tells us which syntactically-valid strings, that is sequences of words that satisfy the syntax of the language, which of those also have a meaning.
+For example, in English, "I are big" has the form of a noun, an intransitive verb, and another noun.
+So it's syntactically valid.
+It's in the righ combination of what would ...
+But it's not valid English because "I" is singular and "are" is plural.
+So this would violate the tatic senmantics of English as a natural language.
+In programming languages, we're going to see similar things.
+For example, having a literal, followed by an operator, followed by another literal, and a "literal" just refers to a number of a string or some other legal combination of things.
+That literal operator "literal" is syntactically valid, but for example, we'll see Pyhton that 2.3 the /, and the string "abc' is not semantically valid.
+It's a static semantic error because we can't divide numbers by strings.
+So again, as we talk about our language, we're going to talk about what are the static semantics of putting things together to create legal expresison.
+And then, finally, there is the formal semantics, or full, semantics of the language.
+And that syas, what's the meaning associated with a syntactically correct string of symbols that does not have any static semantic errors?
+What's the meaning associated with an expression?
+Again, we see the differences between natural languages and programming language.
+In natural languages, like English, sentences can actually be ambiguous
+Fox example, the phrase "I cannot praise this student too highly" has 2 different meanings.
+So in English, the semantics often is straightforward but sometimes is interesting.
+In programming languages, we're going to see that we always have exactly 1 meaning associated with a legal expression.
+But we're also going to see that that meaning may, at times not be exactly what the programmer intended.
+And we're going tohave to come back to that as we walk our way through determining how to ssociate appropriate meanings with different expressions.
+But we will talk about the semantics of a language as we move through building up the expressions.
+And we'll see that the semantics is what we want.
+It tells us what is the meaning of anexpression.
+And we're going to want to work backwords from that semantics to deduce the right syntax to capture the primitive operations to get us to that meaning.
+When we have these different pieces, we can also think about, so what can go wrong?
+What can have things actually cause problem in th esystem?
+And we'll see that we cn get errors, or bugs, as they're sometimes called, in all of the different parts of a language.
+Syntactic errors are quite common, but they're also easily caught by the computer.
+It's pretty straightforward, in a modern programming system, to write an operating system or an interpreter that cat actually check for syntactic errors befor you try and run the program.
+And good systems will not only catch them befor you run the program, they'll also point you to the place and provide you with suggestions as to what you need to fix in order to make the programm syntactically correct.
+So the static semantic errors do occur, perhaps not as often as syntactic ones.
+Some languages are very good at actually carefully checking, abead of time, to catch these errors before running the programs.
+Others care caught while you're actually ... Or anoter way of saying that is , in what are called compiled language, as we'll see, the system will work hard to catch these errors befor you ever get a chance to try and execute the program.
+In language like Python that are interpreted, we'll see that the program will walk through executing, or the interpreter rather, will walk through executing the whole program, and on the fly, will try and spot possible static semantic errors and alert us at that time.
+Finally, as we suggested, programs don't have semantic errors, in the sense that there is a meaning associated with the program if ti is syntactically and statically correct, but the meaning may not be what was intended.
+And so what are common problems?
+The program creashes, or said a little less bluntly,stops running.
+That's because we made an error of some sort that causes a problem inside of the machine.
+
+So,let's pull this together them. 
+Our goal is we want to learn the syntax and semantics of a programming language.
+Those are the details of both how to construct legal programs and get them to do interesting thigns.
+But what we really want to do is to learn how to use those elements to translate our recipes for solving a problem into a form that the computer can use to actually do the work for us.
+We want the computer to computer answers to interesting problems.
+We want to provide the algorithm, the sequence of stems, that's going to make that happen.
+And we want to do that by building off of the syntax and semantics of our programming language.
+And stitched togeter throughout this is going to be this idea that to make this really work, we need to come up with smart ways of capturing the computation.
+So that computational mode of thinking, that way of taking a problem description and breaking it down into a recipe, a sequence of how-to steps, is going to be really valuable.
+And throughout this course, we're going to build up a suite of tools to let us do that.
+In the next lecture, we're going to start doing all of  
